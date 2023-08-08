@@ -1,22 +1,26 @@
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.container {
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+  }
+  
+  #container {
     display: grid;
-    grid-template-columns: repeat(16, 50px);
-    grid-template-rows: repeat(16, 50px);
-    gap: 1px;
-}
+    grid-gap: 1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+  }
+  
+  .grid-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
 
-.grid-item {
-    width: 50px;
-    height: 50px;
-    background-color: #333;
+  .my-color-class {
+    background-colour: blue;
+  }
+
+  .grid-item:hover {
+    background-color: black;
+    transition: ease 0.1s all;
 }

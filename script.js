@@ -1,13 +1,22 @@
+const container = document.getElementById("container");// pobranie elementu o id "container" ze sturktury DOM i zapisuje go w zmiennej container
+let currentColor = 'black'
+const colors = { black: 'black' } // zmiena jako obiekt black
 
-document.addEventListener("DOMContentLoaded", function() {
-const container = document.getElementById("container");
-// Pętla do utworzenia pięciu elementów div
-for (var i = 1; i <= 5; i++) {
-    var newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "dynamic-div");
-    newDiv.textContent = "To jest div #" + i;
 
-    // Dodajemy nowy div do kontenera
-    container.appendChild(newDiv);
-}
-})
+function makeRows(rows, cols) { // funkcja przyjmuje dwa argumenty rows i cols
+  container.style.setProperty('--grid-rows', rows); //Ustawia zmienną CSS --grid-rows na wartość rows w elemencie container. To jest technika zastosowania zmiennych CSS (Custom Properties) do dynamicznego określania właściwości stylów.
+  container.style.setProperty('--grid-cols', cols); // Ustawia zmienną CSS --grid-cols na wartość cols w elemencie container. To definiuje liczbę kolumn w siatce.
+  for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    cell.innerText = (c + 1);
+    container.appendChild(cell).className = "grid-item"; // Dodaje stworzoną komórkę do kontenera i ustawia jej klasę na "grid-item". Klasa ta może być wykorzystywana do stosowania stylów CSS.
+    e => e.target.classList.add(colors[currentColor])
+    cell.addEventListener('mouseover', 
+      e => e.target.classList.add('my-colour-class')
+    )
+    
+};
+};
+
+makeRows(16, 16);
+
