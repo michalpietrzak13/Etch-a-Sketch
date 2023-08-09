@@ -10,13 +10,34 @@ function makeRows(rows, cols) { // funkcja przyjmuje dwa argumenty rows i cols
     let cell = document.createElement("div");
     cell.innerText = (c + 1);
     container.appendChild(cell).className = "grid-item"; // Dodaje stworzoną komórkę do kontenera i ustawia jej klasę na "grid-item". Klasa ta może być wykorzystywana do stosowania stylów CSS.
-    e => e.target.classList.add(colors[currentColor])
-    cell.addEventListener('mouseover', 
-      e => e.target.classList.add('my-colour-class')
-    )
+    cell.addEventListener('click', e => e.target.classList.add(colors[currentColor]));
+    cell.addEventListener('mouseover', e => {
+      e.target.style.backgroundColor = colors[currentColor];
+    });
     
 };
-};
+}; 
+
+function changeGridSize(rows, cols) {
+  const gridItems = document.querySelectorAll('.grid-item');
+  gridItems.forEach(item => item.remove()); // Usuwa istniejące elementy siatki
+
+  makeRows(rows, cols); // Tworzy nową siatkę z nowymi rozmiarami
+}
+
+
+
+function setSquers() { // funkcja przypisana do przycisku, gdzie uzytkownik wprowadza ilosc kwadratow do wygenerowania
+  let number = parseInt(prompt("Please set the number of squares"));
+  if (number >= 100) {
+    alert("Max number is 100");
+  } else {
+    changeGridSize(number, number);
+    alert("Number of squares set to: " + number);
+  }
+}
+
+
 
 makeRows(16, 16);
 

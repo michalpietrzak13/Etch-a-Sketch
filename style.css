@@ -3,17 +3,28 @@
     --grid-rows: 1;
   }
   
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
   #container {
     display: grid;
     grid-gap: 1em;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-columns: repeat(4, 100px);
   }
+
   
   .grid-item {
     padding: 1em;
     border: 1px solid #ddd;
     text-align: center;
+    
   }
 
   .my-color-class {
@@ -24,3 +35,4 @@
     background-color: black;
     transition: ease 0.1s all;
 }
+
