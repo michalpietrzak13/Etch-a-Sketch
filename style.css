@@ -1,39 +1,39 @@
 :root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-  }
-  
-
-
-  body {
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  margin-bottom: 100px;
-  }
-  
-  #container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(4, 100px);
-  }
-
-  
-  .grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
-    text-align: center;
-    
-  }
-
-  .my-color-class {
-    background-colour: blue;
-  }
-
-  .grid-item:hover {
-    background-color: black;
-    transition: ease 0.1s all;
+  --grid-size: 4; /* Liczba wierszy i kolumn w siatce */
 }
 
+body {
+  
+  background-repeat: repeat;
+  display: flex;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: repeat(var(--grid-size), 1fr);
+  grid-template-columns: repeat(var(--grid-size), 1fr); /* Użyj tej samej zmiennej dla liczby kolumn */
+  width: 300px; /* Określ szerokość kontenera (dostosuj do własnych preferencji) */
+  height: 300px; /* Określ wysokość kontenera (dostosuj do własnych preferencji) */
+  margin: 0 auto; /* Wyśrodkuj kontener */
+}
+
+.grid-item {
+  padding: 1em;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.my-color-class {
+  background-color: blue;
+}
+
+.grid-item:hover {
+  background-color: black;
+  transition: ease 0.1s all;
+}

@@ -1,9 +1,12 @@
 const container = document.getElementById("container");// pobranie elementu o id "container" ze sturktury DOM i zapisuje go w zmiennej container
 let currentColor = 'black'
 const colors = { black: 'black' } // zmiena jako obiekt black
+const boardSize = 500; // Stały rozmiar planszy w pikselach
+const gridSize = 10;
 
-
-function makeRows(rows, cols) { // funkcja przyjmuje dwa argumenty rows i cols
+function makeRows(rows, cols) {
+  // funkcja przyjmuje dwa argumenty rows i cols
+    
   container.style.setProperty('--grid-rows', rows); //Ustawia zmienną CSS --grid-rows na wartość rows w elemencie container. To jest technika zastosowania zmiennych CSS (Custom Properties) do dynamicznego określania właściwości stylów.
   container.style.setProperty('--grid-cols', cols); // Ustawia zmienną CSS --grid-cols na wartość cols w elemencie container. To definiuje liczbę kolumn w siatce.
   for (c = 0; c < (rows * cols); c++) {
