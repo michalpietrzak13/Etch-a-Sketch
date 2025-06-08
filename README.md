@@ -15,7 +15,7 @@ Interaktywna aplikacja typu Etch-a-Sketch napisana w czystym JavaScript, HTML i 
 
 1. Sklonuj repozytorium lub pobierz pliki jako ZIP.
 2. Otwórz plik `index.html` w przeglądarce.
-3. Zacznij rysować, przeciągając kursorem po siatce!
+3. Zacznij rysować, przeciągając kursorem po siatce
 
 ## Technologie
 
